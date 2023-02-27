@@ -17,6 +17,7 @@
 6. 
 
 ### Hardware
+![Picture of group 1 hardware](/images/HW_group_1.jpg)
 1. [ESP32-S3-Box](https://github.com/espressif/esp-box)
    * USB serial
    * LCD 240x320: ILI9342C
@@ -49,6 +50,7 @@
 6. 
 
 ### Hardware
+![Picture of group 2 hardware](/images/HW_group_2.jpg)
 1. [M5Stack Core2](https://docs.m5stack.com/en/core/core2)
    * [CP210x USB serial](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)
    * LCD 320x240
@@ -87,6 +89,7 @@
 6. 
 
 ### Hardware
+![Picture of group 3 hardware](/images/HW_group_3.jpg)
 1. [TTGO T-Beam v1.1](http://www.lilygo.cn/claprod_view.aspx?TypeId=62&Id=1281&FId=t28:62:28)
    * [CH9102 USB serial](https://learn.adafruit.com/how-to-install-drivers-for-wch-usb-to-serial-chips-ch9102f-ch9102) 
    * GPS NEO-6M
@@ -125,19 +128,8 @@
 5. 
 
 ### Hardware
+![Picture of group 4 hardware](/images/HW_group_4.jpg)
 1. [aMG FiO Glide ESP32](https://www.aimagin.com/en/amg-fio-glide_esp32.html)
-   * [aMG ESP32 Programmer](https://www.aimagin.com/en/amg-esp32_programmer.html)
-   * [FTDI USB serial](https://ftdichip.com/drivers/vcp-drivers/)
-2. [aMG FiO Glide ESP32](https://www.aimagin.com/en/amg-fio-glide_esp32.html)
-   * [aMG ESP32 Programmer](https://www.aimagin.com/en/amg-esp32_programmer.html)
-   * [FTDI USB serial](https://ftdichip.com/drivers/vcp-drivers/)
-3. [aMG FiO Glide ESP32](https://www.aimagin.com/en/amg-fio-glide_esp32.html)
-   * [aMG ESP32 Programmer](https://www.aimagin.com/en/amg-esp32_programmer.html)
-   * [FTDI USB serial](https://ftdichip.com/drivers/vcp-drivers/)
-4. [aMG FiO Glide ESP32](https://www.aimagin.com/en/amg-fio-glide_esp32.html)
-   * [aMG ESP32 Programmer](https://www.aimagin.com/en/amg-esp32_programmer.html)
-   * [FTDI USB serial](https://ftdichip.com/drivers/vcp-drivers/)
-5. [aMG FiO Glide ESP32](https://www.aimagin.com/en/amg-fio-glide_esp32.html)
    * [aMG ESP32 Programmer](https://www.aimagin.com/en/amg-esp32_programmer.html)
    * [FTDI USB serial](https://ftdichip.com/drivers/vcp-drivers/)
 
@@ -158,6 +150,7 @@
 6. 
 
 ### Hardware
+![Picture of group 5 hardware](/images/HW_group_5.jpg)
 1. [TTGO T-Camera Plus](http://www.lilygo.cn/prod_view.aspx?TypeId=50067&Id=1272&FId=t3:50067:3)
    * [CP210x USB serial](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)
    * OV2640
