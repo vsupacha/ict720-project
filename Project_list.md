@@ -84,12 +84,12 @@
 ### Project brief
 
 ### Members
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
+1. Zun Khet Wai: zunkhetwai@gmail.com
+2. Kyaw Thiha: kyawthiha7090@gmail.com
+3. Hay Man Htun: haymanhtun80@gmail.com
+4. ROHAN PRASAD GUPTA: rohanprasadgupta4@gmail.com
+5. Kyaw Maung Maung Thwin: kyawmgmgthwin12@gmail.com
+6. Adnan Ali: vu.adnan@gmail.com
 
 ### Hardware
 ![Picture of group 3 hardware](/images/HW_group_3.jpg)
