@@ -14,7 +14,7 @@
 3. Aeint Shune Thar (aeint.shu@dome.tu.ac.th)
 4. Khin Thandar Kyaw (khinthandar.k@live.ku.th)
 5. Nyan Lin Mya (m6522040523@g.siit.tu.ac.th)
-6. Hrang Kap Lian (jeffersonlianlian1998@gmail.com)
+6. Hrang Kap Lian (hrangkap.l@live.ku.th)
 
 ### Hardware
 ![Picture of group 1 hardware](/images/HW_group_1.jpg)
@@ -48,7 +48,7 @@
 1. Seng Nu Pan (sengnupan.kumgyi@gmail.com)
 2. Kaung Htet San (kaunghtetsan275@gmail.com)
 3. Khaing Zar Mon (m6522040556@g.siit.tu.ac.th)
-4. Ei Thandar Phyu (eithandar.p@live.ku.th
+4. Ei Thandar Phyu (eithandar.p@live.ku.th)
 5. Hnyot Myet Wun Shunn Le Maung (hnyotmyetwunnshunnle.m@live.ku.th)
 6. Nang Aeindray Kyaw (nangaeindray.k@live.ku.th)
 
@@ -125,7 +125,7 @@
 
 ### Members
 1. Panisara Kanjanarut (panpanisarakj@gmail.com)
-2. Panisara Kanjanarut (panpanisarakj@gmail.com)
+2. Kornchanok Krajangyao (kornchanok41@gmail.com)
 3. Taksaorn Aksornsin (hopely2431@gmail.com)
 4. Phoochit Witchutanon (phoochit1574@gmail.com)
 5. Autsadang Somboonphol (autsadang41@gmail.com)
