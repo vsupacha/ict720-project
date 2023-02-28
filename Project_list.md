@@ -9,12 +9,12 @@
 ### Project brief
 
 ### Members
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
+1. Limhourlaurent Meam (limhourlaurent.meam@dome.tu.ac.th)
+2. Wetu Vexo (m6522040622@g.SIIT.tu.ac.th)
+3. Aeint Shune Thar (aeint.shu@dome.tu.ac.th)
+4. Khin Thandar Kyaw (khinthandar.k@live.ku.th)
+5. Nyan Lin Mya (m6522040523@g.siit.tu.ac.th)
+6. Hrang Kap Lian (jeffersonlianlian1998@gmail.com)
 
 ### Hardware
 ![Picture of group 1 hardware](/images/HW_group_1.jpg)
@@ -45,12 +45,12 @@
 ### Project brief
 
 ### Members
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
+1. Seng Nu Pan (sengnupan.kumgyi@gmail.com)
+2. Kaung Htet San (kaunghtetsan275@gmail.com)
+3. Khaing Zar Mon (m6522040556@g.siit.tu.ac.th)
+4. Ei Thandar Phyu (eithandar.p@live.ku.th
+5. Hnyot Myet Wun Shunn Le Maung (hnyotmyetwunnshunnle.m@live.ku.th)
+6. Nang Aeindray Kyaw (nangaeindray.k@live.ku.th)
 
 ### Hardware
 ![Picture of group 2 hardware](/images/HW_group_2.jpg)
@@ -84,12 +84,12 @@
 ### Project brief
 
 ### Members
-1. Zun Khet Wai: zunkhetwai@gmail.com
-2. Kyaw Thiha: kyawthiha7090@gmail.com
-3. Hay Man Htun: haymanhtun80@gmail.com
-4. ROHAN PRASAD GUPTA: rohanprasadgupta4@gmail.com
-5. Kyaw Maung Maung Thwin: kyawmgmgthwin12@gmail.com
-6. Adnan Ali: vu.adnan@gmail.com
+1. Zun Khet Wai (zunkhetwai@gmail.com)
+2. Kyaw Thiha (kyawthiha7090@gmail.com)
+3. Hay Man Htun (haymanhtun80@gmail.com)
+4. ROHAN PRASAD GUPTA (rohanprasadgupta4@gmail.com)
+5. Kyaw Maung Maung Thwin (kyawmgmgthwin12@gmail.com)
+6. Adnan Ali (vu.adnan@gmail.com)
 
 ### Hardware
 ![Picture of group 3 hardware](/images/HW_group_3.jpg)
@@ -124,11 +124,11 @@
 ### Project brief
 
 ### Members
-1. 
-2. 
-3. 
-4. 
-5. 
+1. Panisara Kanjanarut (panpanisarakj@gmail.com)
+2. Panisara Kanjanarut (panpanisarakj@gmail.com)
+3. Taksaorn Aksornsin (hopely2431@gmail.com)
+4. Phoochit Witchutanon (phoochit1574@gmail.com)
+5. Autsadang Somboonphol (autsadang41@gmail.com)
 
 ### Hardware
 ![Picture of group 4 hardware](/images/HW_group_4.jpg)
@@ -145,12 +145,12 @@
 ### Project brief
 
 ### Members
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
+1. Kraithep Sirisanwannakul (kraithep.sr@gmail.com)
+2. Sitthakarn Udomwongvattana (taetaesitthakarn@gmail.com)
+3. Krit Anegsiripong (krit.aneg@gmail.com)
+4. Suradit Phuangsombat (suraditphuangsombat@hotmail.com)
+5. Thinnaphat Deedetch (thinnaphat.d@live.ku.th) 
+6. Sophonwitch Charoenwong (sophonwitch.c@live.ku.th)
 
 ### Hardware
 ![Picture of group 5 hardware](/images/HW_group_5.jpg)
