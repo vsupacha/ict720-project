@@ -1,6 +1,6 @@
 # ICT720 projects
 
-## Group 1
+## Group 1 [Waste Segragation with Point-based Reward System for Smart & Green Campus](https://github.com/khinthandarkyaw98/AIoT_Group_1/)
 ### Objectives
 1. 
 2. 
@@ -36,7 +36,7 @@
    * Dual-processor with RP2040
    * LED 135x240
 
-## Group 2
+## Group 2 [IoT-enabled Smart Ordering System](https://github.com/Ksengnupan/SoftwareDesignAIoT)
 ### Objectives
 1. 
 2. 
@@ -75,7 +75,7 @@
    * LED 5x5
    * [6-axis IMU MPU6886](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/core/MPU-6886-000193%2Bv1.1_GHIC_en.pdf)
 
-## Group 3
+## Group 3 [Smart Construction Management System](https://github.com/RohanPrasdGupta/SW_PROJECT_DESC/)
 ### Objectives
 1. 
 2. 
@@ -115,7 +115,7 @@
    * [CP210x USB serial](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)
    * LoRa 923MHz
 
-## Group 4
+## Group 4 [Department Store Smart Parking System](https://github.com/ArthurMinovsky/TAIST-Software-Design-Project/)
 ### Objectives
 1. 
 2. 
@@ -136,7 +136,7 @@
    * [aMG ESP32 Programmer](https://www.aimagin.com/en/amg-esp32_programmer.html)
    * [FTDI USB serial](https://ftdichip.com/drivers/vcp-drivers/)
 
-## Group 5
+## Group 5 [Smart Parking Management](https://github.com/JimHok/Software-Design-for-AI)
 ### Objectives
 1. 
 2. 
