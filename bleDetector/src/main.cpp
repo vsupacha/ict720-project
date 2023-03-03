@@ -9,8 +9,8 @@
 
 // constant definitions
 #define TAG             "MAIN"
-#define BLE_TASK_PRIO   3
-#define MQTT_TASK_PRIO  2
+#define BLE_TASK_PRIO   1
+#define MQTT_TASK_PRIO  3
 
 void setup() {
   ESP_LOGI(TAG, "Starting BLE detector");
@@ -20,6 +20,6 @@ void setup() {
 }
 
 void loop() {
-  ESP_LOGD(TAG, "Main task %d: %d", uxTaskPriorityGet(NULL), millis());
-  vTaskDelay(1000);
+  ESP_LOGW(TAG, "Main task %d: %d", uxTaskPriorityGet(NULL), millis());
+  vTaskDelay(1000 / portTICK_PERIOD_MS);
 }
