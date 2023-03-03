@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "testESP32"
+		},
+		{
+			"name": "bleDetector",
+			"path": "bleDetector"
+		}
+	],
+	"settings": {}
+}
