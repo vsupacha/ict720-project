@@ -9,12 +9,12 @@
 
 // constant definitions
 #define TAG             "MAIN"
-#define BLE_TASK_PRIO   1
-#define MQTT_TASK_PRIO  3
+#define BLE_TASK_PRIO   3
+#define MQTT_TASK_PRIO  2
 
 void setup() {
   ESP_LOGI(TAG, "Starting BLE detector");
-  bleQueue = xQueueCreate(BLE_QUEUE_SIZE, sizeof(uint32_t));
+  bleQueue = xQueueCreate(BLE_QUEUE_SIZE, sizeof(ble_msg_t));
   xTaskCreate(ble_task_handler, "BLE task", 4096, NULL, BLE_TASK_PRIO, NULL);
   xTaskCreate(mqtt_task_handler, "MQTT task", 4096, NULL, MQTT_TASK_PRIO, NULL);
 }

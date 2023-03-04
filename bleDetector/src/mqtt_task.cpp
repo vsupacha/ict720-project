@@ -21,10 +21,9 @@ void mqtt_task_handler(void *pvParameters) {
     while(1) {
         // wait for message from BLE task
         // - if message received, publish to mqtt broker
-        uint32_t buf;
-        //xQueueReceive(bleQueue, &buf, portMAX_DELAY);
-        ESP_LOGW(TAG, "BLE queue received: %d", buf);
+        ble_msg_t buf;
+        xQueueReceive(bleQueue, &buf, portMAX_DELAY);
         ESP_LOGW(TAG, "MQTT task running");
-        vTaskDelay(1500 / portTICK_PERIOD_MS);
+        ESP_LOGW(TAG, "Queue received %s: %d", buf.addr.toString().c_str(), buf.rssi);
     }
 }
