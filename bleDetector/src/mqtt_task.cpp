@@ -4,12 +4,13 @@
 #include "mqtt_task.h"
 
 // static variables
-const char* ssid = "????";
-const char* password = "????";
+const char* ssid = "???";
+const char* password = "???";
 const char* mqtt_broker = "broker.hivemq.com";
 const int mqtt_port = 1883;
-const char* pub_topic = "????";
-const char* sub_topic = "????";
+const char* mqtt_client_id = "???";
+const char* pub_topic = "???";
+const char* sub_topic = "???";
 WiFiClient espClient;
 PubSubClient mqttClient(espClient);
 DynamicJsonDocument doc(1024);
@@ -45,7 +46,7 @@ void mqtt_task_handler(void *pvParameters) {
     // - connect to mqtt broker
     mqttClient.setServer(mqtt_broker, mqtt_port);
     mqttClient.setCallback(mqtt_callback);
-    mqttClient.connect("supachai2983621");
+    mqttClient.connect(mqtt_client_id);
     // - subscribe to topics
     mqttClient.subscribe(sub_topic);
     // loop: 

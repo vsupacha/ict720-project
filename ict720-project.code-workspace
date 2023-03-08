@@ -9,6 +9,9 @@
 		{
 			"name": "bleDetector",
 			"path": "bleDetector"
+		},
+		{
+			"path": "bleCollector"
 		}
 	],
 	"settings": {}
