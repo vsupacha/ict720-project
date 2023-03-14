@@ -1,28 +1,41 @@
 import paho.mqtt.client as mqtt
 import asyncio
+from pymongo import MongoClient
+from dotenv import load_dotenv
+import os
 
 class bleCollector:
    def __init__(self):
-      self.mqttClient = mqtt.Client()
-      self.mqttClient.on_message = self.on_message
+      self.mqttClient = None
+      self.mongoClient = None
       self.running = True
 
    def on_message(self, client, userdata, message):
       print("Message Recieved: " + message.payload.decode())
-   
-   async def co_run(self, broker_url, broker_port, sub_topic):
-      self.mqttClient.connect(broker_url, broker_port)
-      self.mqttClient.subscribe(sub_topic)
-      while self.running:
-         self.mqttClient.loop()
-         await asyncio.sleep(0.1)
 
-   def run(self, broker_url, broker_port, sub_topic):
-      asyncio.run(self.co_run(broker_url, broker_port, sub_topic))
+   async def co_mongo(self):
+      self.mongoClient = MongoClient(os.environ['MONGODB_URI'], 27017)
+      while self.running:
+         print("MongoDB is running")
+         await asyncio.sleep(1)
+   
+   async def co_mqtt(self):
+      self.mqttClient = mqtt.Client()
+      self.mqttClient.on_message = self.on_message
+      self.mqttClient.connect(os.environ["BROKER_URL"], int(os.environ["BROKER_PORT"]))
+      self.mqttClient.subscribe(os.environ["DATA_TOPIC"])
+      while self.running:
+         print("MQTT is running")
+         self.mqttClient.loop()
+         await asyncio.sleep(1)
+   
+   async def co_main(self):
+      await asyncio.gather(self.co_mqtt(), self.co_mongo())
+
+   def run(self):
+      asyncio.run(self.co_main())
 
 if __name__ == '__main__':
-   broker_url = "???"
-   broker_port = 1883
-   sub_topic = "???"
+   load_dotenv() 
    app = bleCollector()
-   app.run(broker_url, broker_port, sub_topic)
+   app.run()
