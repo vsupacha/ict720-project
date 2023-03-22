@@ -1,3 +1,6 @@
 paho-mqtt
 pymongo
 python-dotenv
+flask
+line-bot-sdk
+pyngrok
