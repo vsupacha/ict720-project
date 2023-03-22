@@ -3,9 +3,6 @@ version: "3"
 services:
   app:
     build: .
-    expose:
-      - "80"
-      - "8000"
     ports:
       - "80:8000"
     env_file:

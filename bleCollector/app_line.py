@@ -2,7 +2,7 @@ import os
 import sys
 from argparse import ArgumentParser
 
-from flask import Flask, request, abort, url_for
+from flask import Flask, request, abort, jsonify
 from linebot import (
     LineBotApi, WebhookHandler
 )
@@ -28,10 +28,19 @@ if channel_access_token is None:
 
 line_bot_api = LineBotApi(channel_access_token)
 handler = WebhookHandler(channel_secret)
+count = 0
 
 @app.route("/", methods=['GET'])
 def hello_world():
     return "Hello, World!"
+
+@app.route("/api", methods=['GET'])
+def api_func():
+    global count
+    print('latlng=', request.args.get('lat'), request.args.get('lon'))
+    resp = {"my_txt": "hello, REST " + str(count)} # resp["my_txt"]
+    count = count + 1
+    return jsonify(resp)
 
 @app.route("/callback", methods=['POST'])
 def callback():
