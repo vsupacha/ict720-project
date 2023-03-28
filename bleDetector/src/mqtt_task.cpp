@@ -3,17 +3,21 @@
 #include "ble_task.h"
 #include "mqtt_task.h"
 
+// constant definitions
+const char* SSID = "Vsupacha_2.4G";
+const char* PASSWORD = "nokandbee";
+const char* MQTT_BROKER = "broker.hivemq.com";
+const int MQTT_PORT = 1883;
+const char* MQTT_CLIENT_ID = "Mbits_demo";
+const char* PUB_TOPIC = "ict720/vsupacha/data";
+const char* SUB_TOPIC = "ict720/vsupacha/cmd";
+
+const int RSSI_THR = -60;
+
 // static variables
-const char* ssid = "???";
-const char* password = "???";
-const char* mqtt_broker = "broker.hivemq.com";
-const int mqtt_port = 1883;
-const char* mqtt_client_id = "???";
-const char* pub_topic = "???";
-const char* sub_topic = "???";
-WiFiClient espClient;
-PubSubClient mqttClient(espClient);
-DynamicJsonDocument doc(1024);
+static WiFiClient espClient;
+static PubSubClient mqttClient(espClient);
+static DynamicJsonDocument doc(1024);
 
 // static functions
 
@@ -38,17 +42,17 @@ void mqtt_task_handler(void *pvParameters) {
     WiFi.mode(WIFI_OFF);
     vTaskDelay(100 / portTICK_PERIOD_MS);
     WiFi.mode(WIFI_STA);
-    WiFi.begin(ssid, password);
+    WiFi.begin(SSID, PASSWORD);
     while (WiFi.status() != WL_CONNECTED) {
         vTaskDelay(500 / portTICK_PERIOD_MS);
     }
     ESP_LOGW(TAG, "WiFi connected: %s", WiFi.localIP().toString().c_str());
     // - connect to mqtt broker
-    mqttClient.setServer(mqtt_broker, mqtt_port);
+    mqttClient.setServer(MQTT_BROKER, MQTT_PORT);
     mqttClient.setCallback(mqtt_callback);
-    mqttClient.connect(mqtt_client_id);
+    mqttClient.connect(MQTT_CLIENT_ID);
     // - subscribe to topics
-    mqttClient.subscribe(sub_topic);
+    mqttClient.subscribe(SUB_TOPIC);
     // loop: 
     while(1) {
         // wait for message from BLE task
@@ -59,10 +63,11 @@ void mqtt_task_handler(void *pvParameters) {
             ESP_LOGW(TAG, "MQTT task running");
             ESP_LOGW(TAG, "Queue received %s: %d", ble_msg.addr.toString().c_str(), ble_msg.rssi);
             if (ble_msg.rssi > -60) {
+                doc["timestamp"] = ble_msg.timestamp;
                 doc["addr"] = ble_msg.addr.toString().c_str();
                 doc["rssi"] = ble_msg.rssi;
                 serializeJson(doc, msg_buf);
-                mqttClient.publish(pub_topic, msg_buf);
+                mqttClient.publish(PUB_TOPIC, msg_buf);
             }
         }
         mqttClient.loop();

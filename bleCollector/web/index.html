@@ -1,54 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>BLE Collector</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style type="text/css">
-        #my_txt {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 14px;
-            color: blue;
-        }
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 </head>
 <body>
-    <h1>Hello, world</h1>
-    <p id="my_txt"></p>
-    <button onclick="buttonClicked()">OK</button>
-    <p id="my_loc"></p>
-    <button onclick="getLocation()">Where am I</button>
+    <ons-navigator swipeable id="myNavigator" page="main.html"></ons-navigator>
+    <template id="main.html">
+        <ons-page >
+            <ons-toolbar>
+                <div class="center">Main</div>
+            </ons-toolbar>
+            <ons-button id="my_btn" modifier="large--cta">Click me!</ons-button>
+        </ons-page>
+    </template>
+    <template id="sub.html">
+        <ons-page >
+            <ons-toolbar>
+                <div class="left"><ons-back-button>Back</ons-back-button></div>
+                <div class="center">Sub</div>
+            </ons-toolbar>
+        </ons-page>
+    </template>
     <script>
-        console.log("Hello, world");
-        var my_txt = document.getElementById("my_txt");
-        my_txt.innerHTML = "Hello, JavaScript";
-        var my_loc = document.getElementById("my_loc");
-        function getLocation() {
-            navigator.geolocation.getCurrentPosition(
-                (pos) => {
-                    my_loc.innerHTML = "Lat" + pos.coords.latitude + " Lon" + pos.coords.longitude;
-                    fetch("/api?lat="+pos.coords.latitude+"&lon="+pos.coords.longitude)
-                    .then(function(response) {
-                        return response.json();
-                    })
-                    .then(function(data) {
-                        console.log(data);
-                        my_txt.innerHTML = data.my_txt;
-                    });
-                },
-                (err) => {
-                    my_loc.innerHTML = "Error: " + err.message;
-                }
-            );
-        }
-        function buttonClicked() {
-            fetch("/api").then(function(response) {
-                return response.json();
-            }).then(function(data) {
-                console.log(data);
-                my_txt.innerHTML = data.my_txt;
+        ons.ready(function() {
+            console.log("onsen is ready");
+            var myNav = document.getElementById("myNavigator");
+            var btn = document.getElementById("my_btn");
+            btn.addEventListener("click", function() {
+                myNav.pushPage("sub.html");
+                console.log("button clicked");
             });
-        }
+        });
+        // Using a Promise object
+        liff.init({
+            liffId: "1660778353-KgMN1Zaz", // Use own liffId
+        }).then(() => {
+            // Start to use liff's api
+            liff.getProfile().then(profile => {
+                const userId = profile.userId
+                fetch("/api?userId=" + userId)
+                    .then(response => {
+                        return response.json();
+                    }).then(data => {
+                        console.log(data);
+                    });
+            })
+        }).catch((err) => {
+            // Error happens during initialization
+            console.log(err.code, err.message);
+        });
 
     </script>
 </body>

@@ -4,14 +4,14 @@
 
 // global variables
 QueueHandle_t bleQueue;
-BLEScan *pBLEScan;
-TickType_t prevWaketime = 0;
 
 // constant definitions
 #define TAG             "BLE TASK"
 #define SCAN_TIME       3
 
 // static functions
+static BLEScan *pBLEScan;
+static TickType_t prevWaketime = 0;
 
 // BLE task handler
 void ble_task_handler(void *pvParameters) {
@@ -23,19 +23,19 @@ void ble_task_handler(void *pvParameters) {
     //pBLEScan->setAdvertisedDeviceCallbacks(new advertisedDeviceFoundCallbacks());
     pBLEScan->setActiveScan(true); //active scan uses more power, but get results faster
     pBLEScan->setInterval(100);
-    pBLEScan->setWindow(99); // less or equal setInterval value
+    pBLEScan->setWindow(99); // less or equal Interval value
 
     while(1) {
         // loop:
         ble_msg_t msg;
         // - scan for BLE devices
-        xTaskDelayUntil(&prevWaketime, 15000 / portTICK_PERIOD_MS);
-        BLEScanResults foundDevices = pBLEScan->start(SCAN_TIME, false);
+        xTaskDelayUntil(&prevWaketime, 10000 / portTICK_PERIOD_MS);
+        BLEScanResults foundDevices = pBLEScan->start(SCAN_TIME, false); // scan for SCAN_TIME seconds
         pBLEScan->stop();
         // - if device found, send message to MQTT task
         for (int i=0; i < foundDevices.getCount(); i++) {
             BLEAdvertisedDevice dev = foundDevices.getDevice(i);
-            msg.status = 0;
+            msg.timestamp = millis()/1000;
             msg.addr = dev.getAddress();
             msg.rssi = dev.getRSSI();
             xQueueSend(bleQueue, (void *)&msg, 0);

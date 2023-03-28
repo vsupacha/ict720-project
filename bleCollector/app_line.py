@@ -36,10 +36,10 @@ def hello_world():
 
 @app.route("/api", methods=['GET'])
 def api_func():
-    global count
-    print('latlng=', request.args.get('lat'), request.args.get('lon'))
+    userId = request.args.get('userId');
+    print('User ', userId + 'connected' )
     resp = {"my_txt": "hello, REST " + str(count)} # resp["my_txt"]
-    count = count + 1
+    line_bot_api.push_message(userId, TextSendMessage(text='Hello, how are you?'))
     return jsonify(resp)
 
 @app.route("/callback", methods=['POST'])

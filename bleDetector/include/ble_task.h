@@ -12,7 +12,7 @@ extern QueueHandle_t bleQueue;
 
 // data type definitions
 typedef struct {
-    int8_t        status;
+    uint32_t      timestamp;
     NimBLEAddress addr;
     int8_t        rssi;
 } ble_msg_t;
