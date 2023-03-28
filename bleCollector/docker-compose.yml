@@ -9,6 +9,15 @@ services:
       - .env
     depends_on:
       - mongo_db
+      - node_red
+  node_red:
+    image: nodered/node-red
+    ports:
+      - "1880:1880"
+    volumes:
+      - ./node_red:/data
+    depends_on:
+      - mongo_db
   mongo_db:
     image: mongo
     ports:
