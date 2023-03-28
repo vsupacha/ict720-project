@@ -13,6 +13,15 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 from pyngrok import ngrok
+from pymongo import MongoClient
+from datetime import datetime
+
+# database code
+mongoClient = MongoClient(os.environ['MONGODB_URI'], 27017)
+if os.environ["PHASE"] == "DEVELOPMENT":
+    app_db = mongoClient.blecollector_test # Database
+if os.environ["PHASE"] == "PRODUCTION":
+    app_db = mongoClient.blecollector # Database
 
 app = Flask(__name__, static_url_path='/ui', static_folder='web/')
 
@@ -37,10 +46,54 @@ def hello_world():
 @app.route("/api", methods=['GET'])
 def api_func():
     userId = request.args.get('userId');
-    print('User ', userId + 'connected' )
-    resp = {"my_txt": "hello, REST " + str(count)} # resp["my_txt"]
-    line_bot_api.push_message(userId, TextSendMessage(text='Hello, how are you?'))
+    user_col = app_db.user # Collection
+    ans = user_col.find_one({"userId": userId})
+    logging_col = app_db.logging # Collection
+    ans = logging_col.find_one({"ble": ans['ble']})
+    location_col = app_db.location # Collection
+    ans = location_col.find_one({"detector_id": ans['detector_id']})
+    resp = {"userId": userId, "place":ans['place']}
     return jsonify(resp)
+
+@app.route("/api/inject_user", methods=['POST'])
+def inject_user():
+    if os.environ["PHASE"] == "DEVELOPMENT":
+        data = request.get_json()
+        data['timestamp'] = datetime.now()
+        user_col = app_db.user # Collection
+        user_col.insert_one(data)
+        return jsonify({"status": "OK"})
+    return jsonify({"status": "ERROR"})
+
+@app.route("/api/query_user", methods=['GET'])
+def query_user():
+    if os.environ["PHASE"] == "DEVELOPMENT":
+        userId = request.args.get('userId')
+        user_col = app_db.user # Collection
+        ans = user_col.find_one({"userId": userId})
+        resp = {"userId": userId, "ble":ans['ble']}
+        return jsonify(resp)
+    return jsonify({"status": "ERROR"})
+
+@app.route("/api/inject_logging", methods=['POST'])
+def inject_logging():
+    if os.environ["PHASE"] == "DEVELOPMENT":
+        data = request.get_json()
+        data['timestamp'] = datetime.now()
+        logging_col = app_db.logging # Collection
+        logging_col.insert_one(data)
+        return jsonify({"status": "OK"})
+    return jsonify({"status": "ERROR"})
+
+@app.route("/api/inject_location", methods=['POST'])
+def inject_location():
+    if os.environ["PHASE"] == "DEVELOPMENT":
+        data = request.get_json()
+        data['timestamp'] = datetime.now()
+        location_col = app_db.location # Collection
+        location_col.insert_one(data)
+        return jsonify({"status": "OK"})
+    return jsonify({"status": "ERROR"})
 
 @app.route("/callback", methods=['POST'])
 def callback():
