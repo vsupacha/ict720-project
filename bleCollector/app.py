@@ -62,6 +62,18 @@ def api_func():
     resp = {"userId": userId, "place":ans['place']}
     return jsonify(resp)
 
+@app.route("/api/check_detector", methods=['GET'])
+def check_detector():
+    print(request.args.get('detector_id'))
+    detector_id = request.args.get('detector_id')
+    logging_col = app_db.logging # Collection
+    cursor = logging_col.find({"detector_id": int(detector_id)})
+    ble_list = []
+    for document in cursor:
+        print(document)
+        ble_list.append(document["ble"])
+    return jsonify({"status": "OK", "ble_list": ble_list})
+
 @app.route("/api/inject_user", methods=['POST'])
 def inject_user():
     if os.environ["PHASE"] == "DEVELOPMENT":
@@ -133,10 +145,13 @@ def handle_connect(client, userdata, flags, rc):
 
 @mqtt.on_message()
 def handle_mqtt_message(client, userdata, message):
-    data = json.loads( message.payload.decode('ascii') )
-    data['timestamp'] = datetime.now()
-    logging_col = app_db.logging # Collection
-    logging_col.insert_one(data)
+    try:
+        data = json.loads( message.payload.decode('ascii') )
+        data['timestamp'] = datetime.now()
+        logging_col = app_db.logging # Collection
+        logging_col.insert_one(data)
+    except:
+        print(message.payload.decode('ascii'))
 
 if __name__ == "__main__":
     arg_parser = ArgumentParser(
