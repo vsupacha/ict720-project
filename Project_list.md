@@ -2,9 +2,9 @@
 
 ## Group 1 [Waste Segragation with Point-based Reward System for Smart & Green Campus](https://github.com/khinthandarkyaw98/AIoT_Group_1/)
 ### Objectives
-1. 
-2. 
-3. 
+1. To implement a trash segragation system with an object detection camera
+2. To create a database for the point-based reward system for different users
+3. To build a web interface for reward & exchange system
 
 ### Project brief
 
@@ -38,9 +38,9 @@
 
 ## Group 2 [IoT-enabled Smart Ordering System](https://github.com/Ksengnupan/SoftwareDesignAIoT)
 ### Objectives
-1. 
-2. 
-3. 
+1. To facilitate remote management and tracking order data.
+2. To make ordering process more convenient and achieve customer satisfaction.
+3. To develop a novel recommendation system to increase customer traction.
 
 ### Project brief
 
@@ -77,9 +77,10 @@
 
 ## Group 3 [Smart Construction Management System](https://github.com/RohanPrasdGupta/SW_PROJECT_DESC/)
 ### Objectives
-1. 
-2. 
-3. 
+1. As a construction manager, I want to be informed that how many labours come to the construction site so that I can calculate and estimate the number of labours on the construction site.
+2. As a construction manager, in order to determine the amount of overtime, I need to see the laborers' overtime hours.
+3. As a construction manager, I want to be informed of an emergency labour situation so that I can notify to the emergency team.
+4. As a labour, I want to notify the emergency alert so that I can get the emergency respond.
 
 ### Project brief
 
@@ -117,9 +118,9 @@
 
 ## Group 4 [Department Store Smart Parking System](https://github.com/ArthurMinovsky/TAIST-Software-Design-Project/)
 ### Objectives
-1. 
-2. 
-3. 
+1. Assemble harware component for controlling parking gate
+2. Applied Internet of Things Concept to improve parking system
+3. Integate Artificial Intelligenct to make smart parking system
 
 ### Project brief
 
@@ -138,9 +139,9 @@
 
 ## Group 5 [Smart Parking Management](https://github.com/JimHok/Software-Design-for-AI)
 ### Objectives
-1. 
-2. 
-3. 
+1. Develop a system that can detect the license plate number of vehicles entering a parking lot, verify it with a database, and allow access if the number is registered. Also, display an error message if the number is not in the database.
+2. Implement a feature that uses Bluetooth signals to verify the user's identity by matching it with the detected license plate number. Allow entry to the parking lot if the match is successful and display an error message if not.
+3. Create a system that can maintain a secure record of license plate numbers and entry/exit timestamps of vehicles entering and exiting the parking lot. Also, provide authorized personnel with easy access to the record for querying purposes.
 
 ### Project brief
 
