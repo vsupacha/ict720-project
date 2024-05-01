@@ -1,0 +1,3 @@
+[submodule "TARGET_CORDIO_BLUENRG"]
+	path = TARGET_CORDIO_BLUENRG
+	url = https://github.com/ARMmbed/cordio-ble-x-nucleo-idb0xa1

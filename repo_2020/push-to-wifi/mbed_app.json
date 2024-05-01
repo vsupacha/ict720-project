@@ -1,0 +1,20 @@
+{
+    "config": {
+        "wifi-ssid": {
+            "help": "WiFi SSID",
+            "value": "\"Vsupacha_2.4G\""
+        },
+        "wifi-password": {
+            "help": "WiFi Password",
+            "value": "\"nokandbee\""
+        }
+    },
+    "target_overrides": {
+        "*": {
+            "platform.stdio-convert-newlines": true
+        },
+        "DISCO_L475VG_IOT01A": {
+            "ism43362.provide-default": true
+        }
+    }
+}
